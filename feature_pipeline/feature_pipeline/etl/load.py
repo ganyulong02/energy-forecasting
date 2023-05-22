@@ -20,7 +20,7 @@ def to_feature_store(
 
     # Connect to feature store
     project = hopsworks.login(
-        api_key_value=SETTINGS["FS_API_KEY"], project="energy_consumption"
+        api_key_value=SETTINGS["FS_API_KEY"], project="energy_consumption_yg987"
     )
     feature_store = project.get_feature_store()
     assert isinstance(feature_store, FeatureStore)
@@ -95,10 +95,11 @@ def to_feature_store(
 
 def check_hopsworks_project():
     project = hopsworks.login(
-        api_key_value=SETTINGS["FS_API_KEY"]
+        api_key_value=SETTINGS["FS_API_KEY"],
+        project="energy_consumption_yg987"
     )
     print(project)
 
 
-if __name__ == '__main__':
-    check_hopsworks_project()
+# if __name__ == '__main__':
+#     check_hopsworks_project()
